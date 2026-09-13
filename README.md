@@ -4,7 +4,7 @@ A responsive developer portfolio showcasing my projects, technical skills, inter
 
 ## Live Website
 
-Coming Soon
+https://deepakkv8335.github.io
 
 ## Preview
 
