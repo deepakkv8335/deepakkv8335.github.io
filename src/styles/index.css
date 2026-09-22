@@ -1,0 +1,108 @@
+@import 'tailwindcss';
+
+/* Class-based dark mode: the `dark` class on <html> switches the theme. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Theme tokens: light values on :root, dark values on .dark. Dark is the default. */
+:root {
+  --canvas: #f6f7fb;
+  --ink: #0f1222;
+  --muted: #5b6478;
+  --line: rgb(15 18 34 / 0.1);
+  --glass: rgb(255 255 255 / 0.72);
+  --accent: #4f46e5;
+  --accent-soft: rgb(79 70 229 / 0.1);
+  --accent-solid: #4f46e5;
+}
+
+.dark {
+  --canvas: #0a0c12;
+  --ink: #e8ebf4;
+  --muted: #9aa3b8;
+  --line: rgb(255 255 255 / 0.09);
+  --glass: rgb(10 12 18 / 0.72);
+  --accent: #818cf8;
+  --accent-soft: rgb(129 140 248 / 0.14);
+  --accent-solid: #4f46e5;
+}
+
+@theme {
+  --font-sans:
+    ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Exposes the tokens as utilities: bg-canvas, text-ink, text-muted, border-line, ... */
+@theme inline {
+  --color-canvas: var(--canvas);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-glass: var(--glass);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-accent-solid: var(--accent-solid);
+}
+
+@layer base {
+  html {
+    color-scheme: light;
+    /* Keeps anchored sections clear of the fixed navbar (h-16 = 4rem). */
+    scroll-padding-top: 5rem;
+  }
+
+  html.dark {
+    color-scheme: dark;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
+  body {
+    @apply bg-canvas text-ink antialiased;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+}
+
+@layer utilities {
+  @keyframes drift-a {
+    0%,
+    100% {
+      transform: translate(0, 0) scale(1);
+    }
+    50% {
+      transform: translate(3%, -4%) scale(1.05);
+    }
+  }
+
+  @keyframes drift-b {
+    0%,
+    100% {
+      transform: translate(0, 0) scale(1);
+    }
+    50% {
+      transform: translate(-4%, 3%) scale(1.08);
+    }
+  }
+
+  .animate-drift-a {
+    animation: drift-a 22s ease-in-out infinite;
+  }
+
+  .animate-drift-b {
+    animation: drift-b 26s ease-in-out infinite;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-drift-a,
+  .animate-drift-b {
+    animation: none;
+  }
+}
