@@ -1,6 +1,6 @@
 import { profile } from '@/data/profile.js';
 
-export const SITE_URL = 'https://deepakkv8335.github.io';
+export const SITE_URL = 'https://deepakkv8335.co.in';
 export const SITE_NAME = profile.name;
 export const DEFAULT_TITLE = `${profile.name} | Software Developer`;
 export const DEFAULT_DESCRIPTION = profile.hero.description;

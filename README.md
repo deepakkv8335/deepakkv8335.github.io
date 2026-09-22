@@ -44,7 +44,7 @@ isn't configured yet" message instead of actually sending.
 
 ## Deployment
 
-Deployed to GitHub Pages at `https://deepakkv8335.github.io`, via the GitHub Actions workflow
+Deployed to GitHub Pages at `https://deepakkv8335.co.in`, via the GitHub Actions workflow
 in `.github/workflows/deploy.yml`, which builds the app and publishes `dist/` on every push to
 `main`. See the deployment checklist provided alongside this project for the one-time repo
 setup steps (enabling Pages, adding EmailJS secrets).

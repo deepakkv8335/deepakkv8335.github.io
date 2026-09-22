@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://deepakkv8335.github.io/sitemap.xml
+Sitemap: https://deepakkv8335.co.in/sitemap.xml
