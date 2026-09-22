@@ -25,7 +25,7 @@ export const contact = {
       id: 'portfolio',
       label: 'Portfolio',
       value: 'deepakkv8335.co.in',
-      href: 'https://deepakkv8335.co.in',
+      href: 'https://deepakkv.co.in',
     },
     {
       id: 'location',
